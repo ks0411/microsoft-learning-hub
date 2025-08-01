@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "webAppName": {
+      "value": "microsoft-learning-hub-app"
+    },
+    "sku": {
+      "value": "F1"
+    },
+    "repositoryUrl": {
+      "value": "https://github.com/ks0411/microsoft-learning-hub"
+    },
+    "branch": {
+      "value": "main"
+    }
+  }
+}
