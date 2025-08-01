@@ -1,0 +1,115 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "staticWebAppName": {
+      "type": "string",
+      "defaultValue": "microsoft-learning-hub",
+      "metadata": {
+        "description": "Name of the Azure Static Web App"
+      }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "East US 2",
+      "allowedValues": [
+        "East US 2",
+        "West US 2",
+        "Central US",
+        "West Europe",
+        "East Asia"
+      ],
+      "metadata": {
+        "description": "Location for the Static Web App"
+      }
+    },
+    "repositoryUrl": {
+      "type": "string",
+      "defaultValue": "https://github.com/ks0411/microsoft-learning-hub",
+      "metadata": {
+        "description": "GitHub repository URL"
+      }
+    },
+    "branch": {
+      "type": "string",
+      "defaultValue": "main",
+      "metadata": {
+        "description": "Git branch to deploy from"
+      }
+    },
+    "appLocation": {
+      "type": "string",
+      "defaultValue": "/",
+      "metadata": {
+        "description": "App source code path"
+      }
+    },
+    "outputLocation": {
+      "type": "string",
+      "defaultValue": "dist",
+      "metadata": {
+        "description": "Built app content directory"
+      }
+    },
+    "buildPreset": {
+      "type": "string",
+      "defaultValue": "React",
+      "allowedValues": [
+        "React",
+        "Vue",
+        "Angular",
+        "Custom"
+      ],
+      "metadata": {
+        "description": "Build preset for the application"
+      }
+    }
+  },
+  "variables": {
+    "staticWebAppName": "[parameters('staticWebAppName')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/staticSites",
+      "apiVersion": "2022-03-01",
+      "name": "[variables('staticWebAppName')]",
+      "location": "[parameters('location')]",
+      "tags": {
+        "project": "Microsoft Learning Hub",
+        "purpose": "Certification Training",
+        "technology": "React TypeScript",
+        "deployment": "Azure Static Web Apps"
+      },
+      "sku": {
+        "name": "Free",
+        "tier": "Free"
+      },
+      "properties": {
+        "repositoryUrl": "[parameters('repositoryUrl')]",
+        "branch": "[parameters('branch')]",
+        "buildProperties": {
+          "appLocation": "[parameters('appLocation')]",
+          "outputLocation": "[parameters('outputLocation')]",
+          "skipGithubActionWorkflowGeneration": false
+        },
+        "stagingEnvironmentPolicy": "Enabled",
+        "allowConfigFileUpdates": true,
+        "enterpriseGradeCdnStatus": "Disabled"
+      }
+    }
+  ],
+  "outputs": {
+    "staticWebAppUrl": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Web/staticSites', variables('staticWebAppName'))).defaultHostname]"
+    },
+    "staticWebAppName": {
+      "type": "string",
+      "value": "[variables('staticWebAppName')]"
+    },
+    "deploymentToken": {
+      "type": "string",
+      "value": "[listSecrets(resourceId('Microsoft.Web/staticSites', variables('staticWebAppName')), '2022-03-01').properties.apiKey]"
+    }
+  }
+}
