@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Question } from '../types';
+import { Question } from '../../types';
 import { Clock, CheckCircle, XCircle } from 'lucide-react';
 
 interface QuestionCardProps {
@@ -9,6 +9,12 @@ interface QuestionCardProps {
   showFeedback: boolean;
   questionNumber?: number;
   totalQuestions?: number;
+}
+
+interface QuestionOption {
+  id: string;
+  text: string;
+  isCorrect: boolean;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -52,7 +58,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     }
   };
 
-  const getOptionClass = (option: any) => {
+  const getOptionClass = (option: QuestionOption) => {
     const isSelected = localSelectedAnswers.includes(option.id);
     
     if (!showFeedback) {
@@ -110,7 +116,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
 
       {/* Options */}
       <div className="space-y-3 mb-6">
-        {question.options.map((option) => (
+        {question.options.map((option: QuestionOption) => (
           <button
             key={option.id}
             onClick={() => handleOptionSelect(option.id)}
@@ -167,7 +173,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
           {question.tags.length > 0 && (
             <div className="mt-3">
               <div className="flex flex-wrap gap-2">
-                {question.tags.map((tag, index) => (
+                {question.tags.map((tag: string, index: number) => (
                   <span
                     key={index}
                     className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-full"
