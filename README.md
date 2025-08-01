@@ -1,11 +1,11 @@
-# 🎓 Microsoft Fabric Learning Portal
+# 🎓 Microsoft Learning Hub
 
 [![React](https://img.shields.io/badge/React-18.2.0-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0+-blue.svg)](https://tailwindcss.com/)
 [![MCP Integration](https://img.shields.io/badge/MCP-Microsoft%20Docs-green.svg)](https://microsoft.com/learn)
 
-A comprehensive learning portal for Microsoft Fabric certification preparation with **live Microsoft Documentation integration** via MCP (Model Context Protocol).
+A comprehensive learning hub for Microsoft certification preparation with **live Microsoft Documentation integration** via MCP (Model Context Protocol).
 
 ![Learning Portal Screenshot](https://via.placeholder.com/800x400?text=Microsoft+Fabric+Learning+Portal)
 
@@ -50,8 +50,8 @@ A comprehensive learning portal for Microsoft Fabric certification preparation w
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/microsoft-fabric-learning-portal.git
-cd microsoft-fabric-learning-portal
+git clone https://github.com/ks0411/microsoft-learning-hub.git
+cd microsoft-learning-hub
 
 # Install dependencies
 npm install
@@ -163,7 +163,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- Create an [Issue](https://github.com/YOUR_USERNAME/microsoft-fabric-learning-portal/issues) for bug reports
+- Create an [Issue](https://github.com/ks0411/microsoft-learning-hub/issues) for bug reports
 - Check [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/) for official documentation
 - Review [Certification Requirements](https://learn.microsoft.com/en-us/credentials/certifications/) for exam details
 

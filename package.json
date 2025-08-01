@@ -1,9 +1,9 @@
 {
-  "name": "ms-exam-skillup",
+  "name": "microsoft-learning-hub",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Microsoft Fabric Certification Learning Portal",
+  "description": "Comprehensive Microsoft certification learning hub with live documentation integration",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
