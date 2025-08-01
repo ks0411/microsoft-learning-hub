@@ -5,8 +5,11 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0+-blue.svg)](https://tailwindcss.com/)
 [![MCP Integration](https://img.shields.io/badge/MCP-Microsoft%20Docs-green.svg)](https://microsoft.com/learn)
 [![Deploy to Azure](https://img.shields.io/badge/Deploy%20to-Azure-blue.svg)](DEPLOY_TO_AZURE.md)
+[![Azure Static Web Apps CI/CD](https://github.com/ks0411/microsoft-learning-hub/actions/workflows/azure-static-web-apps.yml/badge.svg)](https://github.com/ks0411/microsoft-learning-hub/actions/workflows/azure-static-web-apps.yml)
 
 A comprehensive learning hub for Microsoft certification preparation with **live Microsoft Documentation integration** via MCP (Model Context Protocol).
+
+## 🌟 **LIVE APPLICATION**: https://gentle-smoke-099a5850f.2.azurestaticapps.net
 
 ## 🚀 One-Click Azure Deployment
 
