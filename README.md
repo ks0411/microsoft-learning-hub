@@ -4,10 +4,21 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.0+-blue.svg)](https://tailwindcss.com/)
 [![MCP Integration](https://img.shields.io/badge/MCP-Microsoft%20Docs-green.svg)](https://microsoft.com/learn)
+[![Deploy to Azure](https://img.shields.io/badge/Deploy%20to-Azure-blue.svg)](DEPLOY_TO_AZURE.md)
 
 A comprehensive learning hub for Microsoft certification preparation with **live Microsoft Documentation integration** via MCP (Model Context Protocol).
 
-![Learning Portal Screenshot](https://via.placeholder.com/800x400?text=Microsoft+Fabric+Learning+Portal)
+## 🚀 One-Click Azure Deployment
+
+Deploy this learning hub to Azure with just one click!
+
+### Azure Static Web Apps (Recommended)
+[![Deploy to Azure Static Web Apps](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks0411%2Fmicrosoft-learning-hub%2Fmain%2Fazure%2Fstatic-web-app-template.json)
+
+### Azure App Service
+[![Deploy to Azure App Service](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fks0411%2Fmicrosoft-learning-hub%2Fmain%2Fazure%2Fapp-service-template.json)
+
+📋 [**Full Deployment Guide**](DEPLOY_TO_AZURE.md) | 🔄 [**CI/CD Workflows**](.github/WORKFLOWS.md)
 
 ## ✨ Features
 
@@ -39,14 +50,20 @@ A comprehensive learning hub for Microsoft certification preparation with **live
 - **Tailwind CSS** for modern, responsive design
 - **MCP Integration** for live Microsoft Docs content
 - **Vite** for fast development and building
+- **Azure Ready** with one-click deployment options
 
 ## 🚀 Quick Start
 
-### Prerequisites
+### Option 1: Deploy to Azure (Recommended)
+Use the one-click deployment buttons above or follow the [complete deployment guide](DEPLOY_TO_AZURE.md).
+
+### Option 2: Local Development
+
+#### Prerequisites
 - Node.js 18+ and npm
 - Modern web browser
 
-### Installation
+#### Installation
 
 ```bash
 # Clone the repository
@@ -62,111 +79,31 @@ npm run dev
 
 Open [http://localhost:5174](http://localhost:5174) in your browser.
 
-### Build for Production
+## 🌐 Azure Deployment Features
 
-```bash
-npm run build
-npm run preview
-```
+### 🎯 **Multiple Deployment Options**
+- **Azure Static Web Apps**: Free tier, global CDN, automatic HTTPS
+- **Azure App Service**: Traditional hosting with scaling options
+- **ARM Templates**: Infrastructure-as-code with full customization
 
-## 📖 Usage
+### 🔄 **Automated CI/CD**
+- **GitHub Actions**: Automatic deployments on push to main
+- **PR Previews**: Test changes in isolated environments
+- **Build Optimizations**: Automated dependency caching and artifact management
 
-### Taking Practice Exams
+### ⚙️ **Production Ready**
+- **Environment Variables**: Configurable MCP integration settings
+- **Performance Monitoring**: Application Insights integration ready
+- **Custom Domains**: Easy setup for production URLs
+- **SSL/TLS**: Automatic certificate management
 
-1. **Select Certification**: Choose DP-600 or DP-700
-2. **Review Instructions**: Understand exam format and timing
-3. **Start Exam**: Begin 3-hour timed simulation
-4. **Navigate Questions**: Use Previous/Next buttons
-5. **Submit & Review**: Get scored results and detailed explanations
+## 💰 Cost Optimization
 
-### MCP Integration Status
-
-Watch for the status indicator in the exam header:
-- 🟢 **"Live Microsoft Docs"** - Connected to MCP server
-- 🔵 **"Comprehensive Bank"** - Using local question bank
-
-## 🏗 Architecture
-
-### Core Components
-
-```
-src/
-├── components/           # Reusable UI components
-│   ├── exam/            # Exam-specific components
-│   └── layout/          # Layout components
-├── pages/               # Main application pages
-├── services/            # Business logic and API integration
-│   ├── mcpQuestionService.ts    # Main question service
-│   └── mcpIntegration.ts        # MCP Microsoft Docs integration
-├── types/               # TypeScript type definitions
-└── styles/              # Global styles and Tailwind config
-```
-
-### MCP Integration Flow
-
-```
-User Request → MCPQuestionService → MCPIntegrationService → Microsoft Docs MCP Server
-                                 ↓
-                         Real-time Questions ← Live Microsoft Learn Content
-                                 ↓
-                         Enhanced Question Bank (Local + MCP Generated)
-```
-
-## 📊 Question Bank Details
-
-### DP-600 Coverage
-- **Maintain a data analytics solution** (25-30%)
-- **Prepare data** (45-50%)  
-- **Implement and manage semantic models** (25-30%)
-
-### DP-700 Coverage
-- **Implement and manage an analytics solution** (30-35%)
-- **Ingest and transform data** (30-35%)
-- **Monitor and optimize an analytics solution** (30-35%)
-
-## 🔧 Configuration
-
-### MCP Integration Setup
-
-The portal automatically detects MCP server availability. To enable full Microsoft Docs integration:
-
-1. Ensure MCP server is running in your environment
-2. Install Microsoft Docs MCP extension (if available)
-3. Check browser console for connection logs
-
-### Environment Variables
-
-```env
-# Optional: Configure MCP settings
-VITE_MCP_ENABLED=true
-VITE_MCP_ENDPOINT=https://learn.microsoft.com/api/mcp
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Microsoft Learn** for comprehensive certification documentation
-- **Microsoft Fabric** team for excellent documentation and resources
-- **MCP Protocol** for enabling live documentation integration
-- **React** and **TypeScript** communities for excellent tools
-
-## 📞 Support
-
-- Create an [Issue](https://github.com/ks0411/microsoft-learning-hub/issues) for bug reports
-- Check [Microsoft Learn](https://learn.microsoft.com/en-us/fabric/) for official documentation
-- Review [Certification Requirements](https://learn.microsoft.com/en-us/credentials/certifications/) for exam details
+### Free Tier Options
+- **Azure Static Web Apps Free**: 100GB bandwidth, 0.5GB storage
+- **Azure App Service F1**: 1GB storage, 165 minutes/day compute
+- **GitHub Actions**: 2,000 minutes/month for public repositories
 
 ---
 
-Built with ❤️ for the Microsoft Fabric community. Good luck with your certification journey! 🎉
+Built with ❤️ for the Microsoft Fabric community. Deploy to Azure and start learning today! 🎉
